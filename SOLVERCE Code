@@ -1,0 +1,228 @@
+Lbl 1
+ClrHome
+"SOLVER PLUS CE"→Str1
+For(I,1,length(Str1))
+sub(Str1,1,I)→Str2
+Output(1,1,Str2)
+For(J,1,150)
+End
+End
+Wait 1
+Disp "1=DISTANCE       9=SLOPE"
+Disp "2=MISSPYTH      10=TEMPCON"
+Disp "3=PRIMECHK      11=TIMER"
+Disp "4=PYTHAG       12=UNITCON"
+Disp "5=QUADRAT      13=CHORDINT"
+Disp "6=RADSIM       14=MIDPOINT"
+Disp "7=XSOLVER       0=QUIT"
+Disp "8=FACTOR"
+Prompt T
+If T=0
+Then
+Stop
+End
+If T=1
+Then
+ClrHome
+Disp "DISTANCE"
+Prompt X,Y,A,B
+√((A-X)²+(B-Y)²)→D
+Disp D
+Wait 5
+Goto 1
+End
+If T=2
+Then
+ClrHome
+Disp "MISSPYTH"
+Prompt C,A
+C²-A²→G
+√(G)→B
+Disp B
+Wait 5
+Goto 1
+End
+If T=3
+Then
+ClrHome
+Disp "PRIMECHK"
+Prompt P
+If P≤1
+Then
+Disp "NOT PRIME"
+Stop
+Wait 5
+Goto 1
+End
+For(A,2,√(P))
+If fPart(P/A)=0
+Then
+Disp "NOT PRIME"
+Stop
+Wait 5
+Goto 1
+End
+End
+Disp "PRIME"
+Wait 5
+Goto 1
+End
+If T=4
+Then
+ClrHome
+Disp "PYTHAG"
+Prompt A,B
+A²+B²→G
+√(G)→C
+Disp C
+Wait 5
+Goto 1
+End
+If T=5
+Then
+ClrHome
+Disp "QUADRATIC"
+Prompt A,B,C
+(­B+√(B²-4AC))→G
+G/2A→X
+(­B-√(B²-4AC))→H
+H/2A→Y
+Disp X
+Disp Y
+Wait 5
+Goto 1
+End
+If T=6
+Then
+ClrHome
+Disp "RADSIM"
+Prompt N
+N→X
+1→A
+For(B,1,√(N))
+If fPart(N/(B²))=0
+Then
+B→A
+N/(B²)→X
+End
+End
+Disp "√(",N,"=",A,"√()",X
+Wait 5
+Goto 1
+End
+If T=7
+Then
+ClrHome
+Disp "XSOLVER"
+Disp "AX+B=C"
+Prompt A,B,C
+If A=0
+Then
+Disp "NO SOLUTION"
+Else
+Disp "X="
+Disp (C-B)/A
+Wait 5
+Goto 1
+End
+Wait 5
+Goto 1
+End
+If T=8
+Then
+ClrHome
+Disp "FACTOR"
+Prompt N
+For(I,1,N)
+If fPart(N/I)=0
+Then
+Disp I
+Wait 5
+Goto 1
+End
+End
+End
+If T=9
+Then
+ClrHome
+Disp "SLOPE"
+Prompt X,Y,A,B
+(B-Y)(A-X)→M
+Disp "SLOPE=",M
+Wait 5
+Goto 1
+End
+If T=10
+Then
+ClrHome
+Disp "TEMPCON"
+Disp "1=F TO C","2=C TO F"
+Input "CHOOSE: ",C
+If C=1
+Then
+Input "FAHRENHEIT? ",F
+(F-32)*5/9→T
+Disp "CELSIUS =",T
+Wait 5
+Goto 1
+Else
+Input "CELSIUS? ",C
+C*9/5+32→T
+Disp "FAHRENHEIT =",T
+Wait 5
+Goto 1
+End
+End
+If T=11
+Then
+ClrHome
+Disp "TIMER"
+Input "SECONDS? ",T
+For(I,T,1,­1)
+ClrHome
+Disp "TIME LEFT:",I
+Wait 1
+End
+Disp "TIMES UP! KABOOM!"
+Wait 5
+Goto 1
+End
+If T=12
+Then
+ClrHome
+Disp "UNITCON"
+Disp "1=INCH TO CM","2=CM TO INCH"
+Input "CHOOSE: ",C
+If C=1
+Then
+Input "INCHES? ",X
+X*2.54→Y
+Else
+Input "CM? ",X
+X/2.54→Y
+End
+Disp "RESULTS =",Y
+Wait 5
+Goto 1
+End
+If T=13
+Then
+ClrHome
+Disp "A*B=C*X"
+Prompt A,B,C
+(A*B)/C→X
+Disp "X=",X
+Wait 5
+Goto 1
+End
+If T=14
+Then
+ClrHome
+Disp "(X+A)/2,(Y+B)/2"
+Prompt X,Y,A,B
+(X+A)/2→X
+(Y+B)/2→Y
+Disp "MX=",X,"MY=",Y
+Wait 5
+Goto 1
+End
