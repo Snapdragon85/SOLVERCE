@@ -3,7 +3,7 @@ Very advanced calculator addition for the TI-84+ CE family
 
 ## HOW TO SET UP THE PROGRAM
 
-1. Install and update either Ti Connect CE or TiLP
+1. Install and update either [Ti Connect CE](https://education.ti.com/en/software/details/en/B59F6C83468C4574ABFEE93D2BC3F807/swticonnectsoftware) or [TiLP](http://lpg.ticalc.org/prj_tilp/)
 2. Plug your calculator into your computer
 3. Download the Latest Release of SOLVERCE.8xp
 4. Send the file over to the calculator through the program.
